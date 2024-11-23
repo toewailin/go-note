@@ -76,3 +76,18 @@
     └── random_tests/
 ```
 This structure ensures a professional and organized workspace for Go development
+
+### **Comparison**
+
+| **Type**                 | **Modern Structure (Recommended)**                   | **Legacy `GOPATH` Structure**                   |
+|--------------------------|-----------------------------------------------------|------------------------------------------------|
+| **Public Project Path**  | `/Users/toe/projects/github.com/username/project/`   | `/Users/toe/go/src/github.com/username/project/`|
+| **Personal Project Path**| `/Users/toe/projects/personal_project/`              | `/Users/toe/go/src/personal_project/`          |
+| **Dependency Management**| Go modules (`go.mod`)                                | Relies on `GOPATH`                             |
+| **Flexibility**          | Can be placed anywhere                               | Must be under `GOPATH/src/`                    |
+| **Ease of Use**          | Modern tooling; no GOPATH restriction                | More restrictive setup                         |
+
+If you choose to stick to the traditional `GOPATH` setup (not recommended for modern Go modules)
+
+---
+
