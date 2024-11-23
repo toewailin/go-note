@@ -1,5 +1,7 @@
 # Golang Workspaces Folder Structure
 
+If you choose to stick to the traditional `GOPATH` setup (not recommended for modern Go modules)
+
 #### **1. General Workspace Folder**
 - Location: `/Users/your_username/projects/`
 - Example:
@@ -86,8 +88,6 @@ This structure ensures a professional and organized workspace for Go development
 | **Dependency Management**| Go modules (`go.mod`)                                | Relies on `GOPATH`                             |
 | **Flexibility**          | Can be placed anywhere                               | Must be under `GOPATH/src/`                    |
 | **Ease of Use**          | Modern tooling; no GOPATH restriction                | More restrictive setup                         |
-
-If you choose to stick to the traditional `GOPATH` setup (not recommended for modern Go modules)
 
 ---
 
