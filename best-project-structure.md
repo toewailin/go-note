@@ -9,8 +9,11 @@
 │   │   └── main.go              # Worker entry point
 │   ├── cli/                     # Command-line tools (for migrations, setup, etc.)
 │   │   └── main.go              # CLI tool entry point
+│   ├── cronjob/                 # Cron job tasks (if applicable)
+│   │   └── main.go              # Cron job entry point
 ├── config/                      # App settings, environment variables, and configuration files
 │   ├── config.go                # Loads config values (from .env, environment, etc.)
+│   ├── db.go                    # Database configuration and connection setup
 ├── dto/                         # Data Transfer Objects (for request/response models)
 │   ├── user_dto.go              # General User DTO for both Admin and Mobile (can be reused)
 │   ├── auth_dto.go              # DTOs for authentication (login, signup)
@@ -35,6 +38,8 @@
 ├── test/                        # Unit, integration, and functional tests
 ├── scripts/                      # Scripts for deployment, migrations, etc.
 │   ├── migration.sh             # Example migration script for DB
+├── sql/                         # SQL database schemas and queries
+│   ├── db_project.sql           # SQL file for the project
 ├── go.mod                       # Go module file (dependency management)
 ├── go.sum                       # Go checksum file (for security)
 └── README.md                    # Project documentation
