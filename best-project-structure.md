@@ -15,17 +15,26 @@
 │   ├── redis_config.go                   # Redis connection and config (pub/sub)
 │   ├── environment.go                    # Environment-specific settings (dev, prod)
 │   └── .env                              # Environment variables
-├── scaffolding/                          # Scaffolding files and templates
-│   ├── controller_template.go            # Template for generating controllers
-│   ├── model_template.go                 # Template for generating models
-│   ├── migration_template.go             # Template for generating migrations
-│   ├── factory_template.go               # Template for generating factories
-│   └── route_template.go                 # Template for generating routes
+├── dto/                                  # Data Transfer Objects (DTOs)
+│   ├── userDTO.go                        # User-specific DTO (for responses)
+│   ├── betDTO.go                         # Bet-related DTO
+│   └── playerDTO.go                      # Player-specific DTO
 ├── handler/                              # HTTP handlers (controllers)
 │   ├── adminHandler.go                   # Admin logic (system health, user management)
 │   ├── playerHandler.go                  # Player logic (betting, profile)
 │   ├── betHandler.go                     # Bet logic (placing bets, checking history)
 │   └── gameHandler.go                    # Game logic (rounds, results)
+├── locales/                              # Translation files
+│   ├── en.json                           # English translations
+│   ├── es.json                           # Spanish translations
+│   └── fr.json                           # French translations
+├── middlewares/                          # Middleware
+│   ├── authMiddleware.go                 # JWT authentication
+│   ├── loggingMiddleware.go              # Logging requests/responses
+│   ├── rateLimitMiddleware.go            # Rate-limiting
+│   ├── roleMiddleware.go                 # Role-based access control
+│   ├── errorHandlingMiddleware.go        # Centralized error handler
+│   ├── corsMiddleware.go                 # CORS handling
 ├── models/                               # GORM models (database entities)
 │   ├── user.go                           # User model (all roles)
 │   ├── player.go                         # Player-specific model
@@ -36,34 +45,29 @@
 │   ├── betRepo.go                        # CRUD for bets
 │   ├── gameRepo.go                       # CRUD for game tables
 │   └── transactionRepo.go                # CRUD for transactions
+├── response/                             # Standardized response format
+│   ├── successResponse.go                 # Success response format
+│   └── errorResponse.go                   # Error response format
+├── routes/                               # Route definitions
+│   ├── adminRoutes.go                    # Admin-related routes
+│   ├── playerRoutes.go                   # Player-related routes
+│   ├── betRoutes.go                      # Bet-related routes
+│   └── gameRoutes.go                     # Game-related routes
+├── scaffolding/                          # Scaffolding files and templates
+│   ├── controller_template.go            # Template for generating controllers
+│   ├── model_template.go                 # Template for generating models
+│   ├── migration_template.go             # Template for generating migrations
+│   ├── factory_template.go               # Template for generating factories
+│   └── route_template.go                 # Template for generating routes
+├── scripts/                              # Database migrations and scripts
+│   ├── genkeys.sh                        # Generate PEM keys
+│   └── upload.sh                         # Upload script
 ├── services/                             # Core business logic
 │   ├── authService.go                    # Authentication logic (JWT, sessions)
 │   ├── betService.go                     # Betting logic (bets, payouts)
 │   ├── gameService.go                    # Game logic (round management)
 │   ├── playerService.go                  # Player logic (profile, balance)
 │   └── cronService.go                    # Cron job or background task logic
-├── routes/                               # Route definitions
-│   ├── adminRoutes.go                    # Admin-related routes
-│   ├── playerRoutes.go                   # Player-related routes
-│   ├── betRoutes.go                      # Bet-related routes
-│   └── gameRoutes.go                     # Game-related routes
-├── middlewares/                          # Middleware
-│   ├── authMiddleware.go                 # JWT authentication
-│   ├── loggingMiddleware.go              # Logging requests/responses
-│   ├── rateLimitMiddleware.go            # Rate-limiting
-│   ├── roleMiddleware.go                 # Role-based access control
-│   ├── errorHandlingMiddleware.go        # Centralized error handler
-│   ├── corsMiddleware.go                 # CORS handling
-├── utils/                                # Utility functions
-│   ├── jwt.go                            # JWT helpers
-│   ├── logger.go                         # Logger
-│   ├── validation.go                     # Input validation
-│   ├── pagination.go                     # Pagination helper
-│   ├── i18n.go                           # Translations (i18n helpers)
-├── locales/                              # Translation files
-│   ├── en.json                           # English translations
-│   ├── es.json                           # Spanish translations
-│   └── fr.json                           # French translations
 ├── tests/                                # Unit and integration tests
 │   ├── controllers/
 │   │   └── adminController_test.go
@@ -71,16 +75,18 @@
 │   │   └── authService_test.go
 │   └── repositories/
 │       └── userRepository_test.go
-├── scripts/                              # Database migrations and scripts
-│   ├── genkeys.sh                        # Generate PEM keys
-│   └── upload.sh                         # Upload script
+├── utils/                                # Utility functions
+│   ├── jwt.go                            # JWT helpers
+│   ├── logger.go                         # Logger
+│   ├── validation.go                     # Input validation
+│   ├── pagination.go                     # Pagination helper
+│   ├── i18n.go                           # Translations (i18n helpers)
 ├── docker/                               # Docker configuration
 │   ├── Dockerfile                        # Dockerfile for production
 │   ├── Dockerfile.dev                    # Dockerfile for development
 │   └── docker-compose.yml                # Docker-compose setup
 ├── go.mod                                # Go module dependencies
 └── go.sum                                # Go module checksum
-```
 
 ---
 
